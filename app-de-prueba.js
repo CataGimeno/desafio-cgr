@@ -32,11 +32,39 @@ let nuevoNombre = [];
 console.log (nuevoNombre.push ("gonzalo"));
 console.log (nuevoNombre);
 
-//_________________________
+/*
+Para SOBREESCRIBIR el título de la página en el index.html
+1. primero debo decirle a la varible que use el metodo document.querySelector en la etiqueta seleccionada
+2. despues debo decirle a la variable que use el metodo innrHTML y escribo el titulo que quiero
+3. No es lo mas adecuado y puede producir errores
 
 
+*/
 
+let titulo = document.querySelector ("h1")
+titulo.innerHTML = "Otro titulo de prueba"
 
+function agregarAmigo () {
+alert ("hola") //para ver que está funcionando
+   /* esto lo puso copilot
+   let nuevoNombre = [];
+    nuevoNombre.push (nombresAmigoSorteo.shift());
+    console.log (nuevoNombre);
+    document.getElementById("amigo").innerHTML = nuevoNombre;
+    */
+}
+
+//Ahora haré una funcion con parametros 
+//que me permita poner textos de forma mas otpimizeda
+
+function cambiarTextos (aQueElemento, textoQueVaAIrEnElELemento) {//los elementos y texto pasan a ser variables
+  //los elementos serian h1, p, h2 y el texto es el contenido
+    let elementoDeHtml = document.querySelector (aQueElemento)
+    elementoDeHtml.innerHTML = textoQueVaAIrEnElELemento
+
+} 
+cambiarTextos ("h1", "Este es un nuevo titulo")
+cambiarTextos ("h2", "Este es un nuevo parrafo")
 
 
 
