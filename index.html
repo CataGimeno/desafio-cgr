@@ -13,21 +13,31 @@
 <body>
     <main class="main-content">
         <header class="header-banner">
-            <h1 class="main-title">Amigo Secreto</h1>
+            <h1 class="main-title">Juego Amigo Secreto</h1>
             <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
         </header>
         
         <section class="input-section">
-            <h2 class="section-title">Digite el nombre de sus amigos</h2>
+            <h2 class="section-title">Escribe el nombre de sus amigos</h2>
+            <h3 class="section-subtitle">Necesitas entre 3 y 20 amigos para el sorteo</h3>
             <div class="input-wrapper">
-                <input type="text" id="amigo" class="input-name" placeholder="aqui pongo lo que queda en gris">
-             <!-- aqui ya estaba el nombre de la función que voy a ejecutar y tengo 
-             que escribir en el js. la funcion debe llamarse "agregarAmigo"-->
+
+            <!-- El id="amigo" es la cajita que recibe los nombres, con esta tengo que crear una variable que los almacene-->    
+                <input type="text" id="nombreAmigos" class="input-name" placeholder="aqui pongo lo que queda en gris">
+             <!-- 
+            Aqui abajo ya estaba el nombre de la función que voy a ejecutar y tengo 
+            que escribir en el js. la funcion debe llamarse "agregarAmigo"
+            
+            A través del elemento onclick="pongo el codigo o el nombre con el cual le
+            voy a llamar dentro del archivo app.js"
+             -->
              
                 <button class="button-add" onclick="agregarAmigo();">Añadir</button>
             </div>
-           
+        
+           <!-- id="listaAmigos" es el espacio que me va a mostrar el listado de amigos que vaya a poner-->
             <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
+            <!-- id="resultado" me mostraré el amigo secreto seleccionado-->
             <ul id="resultado" class="result-list" aria-live="polite"></ul>
 
             <div class="button-container">
@@ -39,7 +49,7 @@
         </section>
     </main>
 
-    <script src="app-de-prueba.js" defer></script>
+    <!--<script src="app-de-prueba.js" defer></script> -->
     <script src="app.js" defer></script>
 </body>
 </html>

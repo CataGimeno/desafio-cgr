@@ -45,7 +45,7 @@ let titulo = document.querySelector ("h1")
 titulo.innerHTML = "Otro titulo de prueba"
 
 function agregarAmigo () {
-alert ("hola") //para ver que está funcionando
+alert("hola"); //para ver que está funcionando
    /* esto lo puso copilot
    let nuevoNombre = [];
     nuevoNombre.push (nombresAmigoSorteo.shift());
@@ -63,8 +63,8 @@ function cambiarTextos (aQueElemento, textoQueVaAIrEnElELemento) {//los elemento
     elementoDeHtml.innerHTML = textoQueVaAIrEnElELemento
 
 } 
-cambiarTextos ("h1", "Este es un nuevo titulo")
-cambiarTextos ("h2", "Este es un nuevo parrafo")
+cambiarTextos ("h1", "Juego Amigo Secreto")
+cambiarTextos ("h2", "Escribe el nombre de tus amigos")
 
 
 
