@@ -1,5 +1,5 @@
-const minimoAmigos = 2;
-const maximoAmigos = 11;
+const minimoAmigos = 3;
+const maximoAmigos = 10;
 const rangoMinimoYMaximo = document.getElementById("rango-minimo-y-maximo");
 const nombreAmigosInput = document.getElementById("nombreAmigos");
 const listaAmigosElement = document.getElementById("listaAmigos");
