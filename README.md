@@ -14,11 +14,11 @@ Es un proyecto web sencillo que busca sortear 1 ganador dentro de un grupo de am
 * ***Visualización de la lista***: Muestra la lista de amigos participantes a medida que se van ingresando.
 * ***Reinicio del sorteo***: Permite reiniciar el sorteo para una nueva ronda, ya sea al finalizar el sorteo o en cualquier momento del juego.
 * ***Mensajes de alerta***: Aparece un mensaje de alerta cuando hay algo que no está permitido: 
-    * campo de nombre vacio: "Debes ingresar un nombre."
-    * campo de nombre con números: "El nombre no puede contener números. Por favor, ingresa un nombre válido."
-    * campo con un nombre repetido: "Este nombre ya está en la lista. Por favor, ingresa un nombre diferente."
-    * necesitas un minimo de amgios: "Necesitas al menos ___ amigos para realizar el sorteo." 
-    * tienes un maximo de amigos: "Ya tienes ___ amigos. Estas listo para realizar el sorteo.
+    * _Campo de nombre vacio:_ "Debes ingresar un nombre."
+    * _Campo de nombre con números:_ "El nombre no puede contener números. Por favor, ingresa un nombre válido."
+    * _Campo con un nombre repetido:_ "Este nombre ya está en la lista. Por favor, ingresa un nombre diferente."
+    * _Necesitas un minimo de amgios:_ "Necesitas al menos ___ amigos para realizar el sorteo." 
+    * _Tienes un maximo de amigos:_ "Ya tienes ___ amigos. Estas listo para realizar el sorteo.
 * ***Entrada por teclado***: Se pueden agregar nombres presionando la tecla Enter.
 
 
