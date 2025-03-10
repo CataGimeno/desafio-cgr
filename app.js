@@ -11,7 +11,7 @@ let amigos = [];
 
 function validarNombre(nombre) {
     if (nombre === '') {
-        alert("Por favor, ingresa un nombre válido.");
+        alert("Debes ingresar un nombre.");
         return false;
     }
     if (/\d/.test(nombre)) {
@@ -35,7 +35,7 @@ function agregarAmigo() {
     }
 
     if (amigos.length >= maximoAmigos) {
-        alert(`Has alcanzado el número máximo de amigos ${maximoAmigos}. No puedes agregar más.`);
+        alert(`Ya tienes ${maximoAmigos} amigos. Estas listo para realizar el sorteo.`);
         return;
     }
 
