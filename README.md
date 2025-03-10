@@ -1,22 +1,22 @@
 # desafio-cgr
-Challenge amigo secreto para Alura Oracle One - Grupo 8 -Desafío en proceso de desarrollo por Catalina Gimeno Rodillo
+Challenge amigo secreto para Alura Oracle One - Grupo 8 -Desafío en proceso de desarrollo por 
+### Catalina Gimeno Rodillo
+
 
 
 # Sorteo de Amigo Secreto
-
-
-Este proyecto es una aplicación web simple para realizar sorteos de amigo secreto entre un grupo de amigos. Permite agregar nombres, sortear un ganador y reiniciar el proceso.
+Es un proyecto web sencillo que busca sortear 1 ganador dentro de un grupo de amigos. Permite sortear una mínimo y máximo de amigos, con nombres que no se pueden repetir. Los nombres no pueden ser ni contener números.
 
 ## Características
 
-* **Agregar Amigos**: Ingresa los nombres de tus amigos para incluirlos en el sorteo.
-* **Validación de Nombres**: Asegura que los nombres sean válidos y únicos.
-* **Sorteo Aleatorio**: Elige un ganador al azar entre los amigos ingresados.
-* **Visualización de la Lista**: Muestra la lista de amigos participantes.
-* **Reinicio del Sorteo**: Permite reiniciar el sorteo para una nueva ronda.
-* **Mensajes Informativos**: Proporciona mensajes claros sobre el estado del sorteo.
-* **Entrada por Teclado**: Se pueden agregar nombres presionando la tecla Enter.
-* **Mensajes estilizados**: Los mensajes de alerta son mostrados por elementos HTML con estilos CSS para mejor experiencia de usuario.
+* ***Agregar Amigos***: Ingresa los nombres de tus amigos para incluirlos en el sorteo, puedes escribir nombres a partir de 1 letra.
+* ***Validación de Nombres***: Asegura que los nombres sean válidos (letras) y únicos (no se puden repetir).
+* ***Sorteo Aleatorio***: Elige un ganador al azar entre los amigos ingresados.
+* ***Visualización de la Lista***: Muestra la lista de amigos participantes a medida que se van ingresando.
+* ***Reinicio del Sorteo***: Permite reiniciar el sorteo para una nueva ronda, ya sea al finalizar el sorteo o en cualquier momento del juego.
+* ***Mensajes de alerta***: Aparece un mensaje de alerta cuando hay algo que no está permitido: *campo de nombre vacio, campo de nombre con números, necesitas un minimo de amgios, tienes un maximo de amigos.*
+* ***Entrada por Teclado***: Se pueden agregar nombres presionando la tecla Enter.
+
 
 ## Cómo Usar
 
@@ -54,11 +54,3 @@ Siéntete libre de contribuir a este proyecto. Puedes abrir un "issue" para repo
 
 Este proyecto está bajo la licencia [MIT](aquí\_va\_el\_link\_de\_la\_licencia).
 
-## Autor
-
-[Tu Nombre] - [Tu GitHub]
-
-## Agradecimientos
-
-* A todos los que han contribuido a este proyecto.
-* A la comunidad de desarrolladores web por su apoyo.
