@@ -19,11 +19,11 @@
         
         <section class="input-section">
             <h2 class="section-title">Escribe el nombre de sus amigos</h2>
-            <h3 class="section-subtitle">Necesitas entre 3 y 20 amigos para el sorteo</h3>
+            <h3 class="section-subtitle" id="rango-minimo-y-maximo">Necesitas entre 3 y 20 amigos para el sorteo</h3>
             <div class="input-wrapper">
 
             <!-- El id="amigo" es la cajita que recibe los nombres, con esta tengo que crear una variable que los almacene-->    
-                <input type="text" id="nombreAmigos" class="input-name" placeholder="aqui pongo lo que queda en gris">
+                <input type="text" id="nombreAmigos" class="input-name" placeholder="Ingresa el nombre de tu amigo"">
              <!-- 
             Aqui abajo ya estaba el nombre de la función que voy a ejecutar y tengo 
             que escribir en el js. la funcion debe llamarse "agregarAmigo"
@@ -44,6 +44,10 @@
                 <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
                     <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
                     Sortear amigo
+                </button>
+                <button class="button-draw" onclick="volverAEmpezar()" aria-label="Sortear amigo secreto">
+                    <img src="assets/btn_reiniciar.png" alt="Ícono para reiniciar">
+                    Volver a empezar
                 </button>
             </div>
         </section>

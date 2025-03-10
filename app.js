@@ -1,93 +1,93 @@
+const minimoAmigos = 2;
+const maximoAmigos = 11;
+const rangoMinimoYMaximo = document.getElementById("rango-minimo-y-maximo");
+const nombreAmigosInput = document.getElementById("nombreAmigos");
+const listaAmigosElement = document.getElementById("listaAmigos");
+const resultadoElement = document.getElementById("resultado");
 
+rangoMinimoYMaximo.textContent = `Necesitas entre ${minimoAmigos} y ${maximoAmigos} amigos para el sorteo`;
 
-//creo la variable "amigo" y le digo que es un array y está vacio
 let amigos = [];
-/*
-//creo la funcion agregarAmigo 
+
+function validarNombre(nombre) {
+    if (nombre === '') {
+        alert("Por favor, ingresa un nombre válido.");
+        return false;
+    }
+    if (/\d/.test(nombre)) {
+        alert("El nombre no puede contener números. Por favor, ingresa un nombre válido.");
+        return false;
+    }
+    return true;
+}
+
+function limpiarInput() {
+    nombreAmigosInput.value = "";
+    nombreAmigosInput.focus();
+}
+
 function agregarAmigo() {
-  
-    //creo la variable nombreAmigo y le digo que busque el elemento con el id "nombreAmigos" que está en el html
-    //y que tome el valor que se le pase
-    //en este caso, el valor que se le pasa es el nombre que se escribe en la caja de texto
-    let nombreAmigo = document.getElementById("nombreAmigos").value;
-    if (esNombreValido(nombreAmigo)) {
+    let nombreAmigo = nombreAmigosInput.value.trim();
+
+    if (!validarNombre(nombreAmigo)) {
+        limpiarInput();
+        return;
+    }
+
+    if (amigos.length >= maximoAmigos) {
+        alert(`Has alcanzado el número máximo de amigos ${maximoAmigos}. No puedes agregar más.`);
+        return;
+    }
+
+    if (!amigos.includes(nombreAmigo)) {
         amigos.push(nombreAmigo);
         mostrarListaAmigos(amigos);
-        document.getElementById("nombreAmigos").value = ""; // Limpiar el input
-        document.getElementById("nombreAmigos").focus(); // Dar foco al input
-      } else {
-        alert("Por favor, ingresa un nombre válido (sin números).");
-      }
-    }
-*/
-function agregarAmigo() {
-    let nombreAmigo = document.getElementById("nombreAmigos").value.trim();
-  
-    // Validar que se haya ingresado un nombre
-    if (nombreAmigo === '') {
-      alert("Por favor, ingresa un nombre válido.");
-      return;
-    }
-  
-    // Validar que el nombre sea válido (sin números)
-    if (esNombreValido(nombreAmigo)) {
-      // Verificar si el nombre ya existe en la lista
-      if (amigos.includes(nombreAmigo)) {
-        alert("Este nombre ya está en la lista. Por favor, ingresa un nombre diferente.");
-        return;
-      }
-  
-      // Agregar el amigo a la lista
-      amigos.push(nombreAmigo);
-      mostrarListaAmigos(amigos);
-      document.getElementById("nombreAmigos").value = ""; // Limpiar el input
-      document.getElementById("nombreAmigos").focus(); // Dar foco al input
-  
-      // Validar que haya al menos 3 amigos
-      if (amigos.length >= 3) {
-        // Validar que no haya más de 20 amigos
-        if (amigos.length <= 20) {
-          alert("¡Tienes suficientes amigos para el sorteo!");
-        } else {
-          alert("Lo siento, has alcanzado el máximo de 20 amigos. No puedes agregar más.");
-        }
-      } 
+        resultadoElement.innerHTML = "";
+        limpiarInput();
     } else {
-      alert("Por favor, ingresa un nombre válido (sin números).");
+        alert("Este nombre ya está en la lista. Por favor, ingresa un nombre diferente.");
     }
-  }
-
-
+}
 
 function mostrarListaAmigos(lista) {
-    let listaAmigosElement = document.getElementById("listaAmigos");
     listaAmigosElement.innerHTML = "";
-    
-    let listaOrdenada = document.createElement("ul");
-    
-    for (let i = 0; i < lista.length; i++) {
-      let nuevoItem = document.createElement("li");
-      nuevoItem.textContent = lista[i];
-      listaOrdenada.appendChild(nuevoItem);
-    }
-    
-    listaAmigosElement.appendChild(listaOrdenada);
-  }
-  function esNombreValido(nombre) {
-    // Expresión regular que no permite números
-    let sinNumeros = /^[^0-9]*$/;
-    return sinNumeros.test(nombre);
-  }
-  
-/*Explicación:
+    lista.forEach(amigo => {
+        let nuevoItem = document.createElement("li");
+        nuevoItem.textContent = amigo;
+        listaAmigosElement.appendChild(nuevoItem);
+    });
+}
 
-Mantenemos el array amigos declarado fuera de las funciones.
-En la función agregarAmigo(), después de agregar el nuevo nombre al array, llamamos a la función mostrarListaAmigos() y le pasamos el array amigos como argumento.
-La función mostrarListaAmigos() recibe el array lista como argumento y se encarga de actualizar el contenido del elemento HTML con el id "listaAmigos".
-Primero, selecciona el elemento HTML con el id "listaAmigos" y lo asigna a la variable listaAmigosElement.
-Luego, limpia el contenido actual de ese elemento usando listaAmigosElement.innerHTML = "".
-Después, recorre el array lista y crea un nuevo elemento <li> por cada elemento del array, asignando el valor como texto del elemento.
-Finalmente, agrega cada nuevo elemento <li> como hijo del elemento listaAmigosElement.
-Al final, la función agregarAmigo() devuelve el array amigos actualizado.
-Ahora, cada vez que se llame a agregarAmigo(), el array amigos se actualizará y se mostrará la lista de amigos en el elemento HTML con el id "listaAmigos".
-*/
+function sortearAmigo() {
+    if (amigos.length < minimoAmigos) {
+        alert(`Necesitas al menos ${minimoAmigos} amigos para realizar el sorteo.`);
+        return;
+    }
+
+    let ganador = amigos[Math.floor(Math.random() * amigos.length)];
+    mostrarMensajeGanador(ganador);
+    amigos = [];
+    mostrarListaAmigos(amigos);
+    limpiarInput();
+}
+
+function mostrarMensajeGanador(ganador) {
+    resultadoElement.innerHTML = "";
+    let nuevoItem = document.createElement("li");
+    nuevoItem.textContent = "El amigo secreto es: " + ganador;
+    resultadoElement.appendChild(nuevoItem);
+}
+
+function volverAEmpezar() {
+    amigos = [];
+    mostrarListaAmigos(amigos);
+    limpiarInput();
+    resultadoElement.innerHTML = "";
+}
+
+// Agregar amigo con la tecla Enter
+nombreAmigosInput.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        agregarAmigo();
+    }
+});
